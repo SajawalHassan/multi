@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+mid_height = 2.0
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0, 0.203922, 1, 1 )
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Light" type="Node" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Light"]
+transform = Transform( 1, 0, 0, 0, 0.0140668, 0.999901, 0, -0.999901, 0.0140668, 0, 136.06, 0 )
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="Light"]
+transform = Transform( 0.0300675, 0.0140604, 0.999449, -0.999548, 0.000422953, 0.0300645, 0, -0.999901, 0.0140668, 112.798, 0.00107384, 0 )
+
+[node name="DirectionalLight3" type="DirectionalLight" parent="Light"]
+transform = Transform( -0.030049, 0.0210534, -0.999327, -0.999548, 0.000422953, 0.0300645, 0.00105563, 0.999778, 0.0210312, -1430.27, 0.00107384, 0 )
+
+[node name="DirectionalLight4" type="DirectionalLight" parent="Light"]
+transform = Transform( -0.000565679, 0.99946, -0.0328675, -0.999548, 0.000422953, 0.0300645, 0.0300622, 0.0328697, 0.999007, -0.2461, 0.00107384, 197.06 )
+
+[node name="DirectionalLight5" type="DirectionalLight" parent="Light"]
+transform = Transform( -0.000123314, -0.99995, 0.00996768, -0.999548, 0.000422953, 0.0300645, -0.0300673, -0.00995946, -0.999498, -0.2461, 0.00107384, -4430.32 )
